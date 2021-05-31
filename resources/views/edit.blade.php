@@ -1,33 +1,40 @@
 @extends('layout')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 mt-4">
-            <h2 class="text-center">Edit User</h2>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-5"></div>
-        <div class="col-lg-7 mt-4">
-            <form action="{{route('user.update', $user->id)}}" method="POST">
-                @csrf
-                <div class="col-sm-4">
-                    <div class="left">
-                        <strong class="">Name</strong>
-                        <input id="name" type="text" name="name" class="form-control" value="{{$user->name}}" placeholder="name"><br>
-                        <p style="color: red">@error('name') {{$message}} @enderror</p>
-                    </div>
-                    <div class="left">
-                        <strong>Email</strong>
-                        <input id="email" type="text" name="email" class="form-control" value="{{$user->email}}" placeholder="email"><br>
-                        <p style="color: red">@error('email') {{$message}} @enderror</p>
-                    </div>
-                    <div class="d-grid gap-2 col-12 mx-auto">
-                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                    </div>
+    <div class="row heading"></div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-4 col-md-6 col-sm-12">
+            <div class="card mt-4">
+                <div class="card-header d-flex justify-content-between align-items-center pb-4">
+                    <strong class="card-title text-center mx-auto">EDIT USER DETAILS</strong>
                 </div>
-            </form>
+                <form action="{{route('user.update', $user->id)}}" method="POST">
+                    @csrf
+                    <div class="col-sm-12">
+                        <div class="left">
+                            <label for="firstName" class="label">First Name</label>
+                            <input id="firstName" type="text" name="firstName" value="{{$user->firstName}}" class=" form-control effect" placeholder="Roy...">
+                            <p style="color: red">@error('firstName') {{$message}} @enderror</p>
+                        </div>
+                        <div class="left">
+                            <label for="lastName" class="label">Last Name</label>
+                            <input id="lastName" type="text" name="lastName" value="{{$user->lastName}}" class="form-control effect" placeholder="Pearson...">
+                            <p style="color: red">@error('lastName') {{$message}} @enderror</p>
+                        </div>
+                        <div class="left">
+                            <label for="mobile" class="label">Mobile</label>
+                            <input id="mobile" type="text" name="mobile" value="{{$user->mobile}}" class="form-control effect" placeholder="0704467943">
+                            <p style="color: red">@error('mobile') {{$message}} @enderror</p>
+                        </div>
+                        <div class="left">
+                            <label for="email" class="label">Email</label>
+                            <input id="email" type="text" name="email" value="{{$user->email}}" class="form-control effect" placeholder="name@example.com">
+                            <p style="color: red">@error('email') {{$message}} @enderror</p>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 @endsection

@@ -19,13 +19,17 @@ class UsersController extends Controller
     public function store(Request $request){
 
         $request->validate([
-            'name' => 'required|max:15',
+            'firstName' => 'required|max:15',
+            'lastName' => 'required|max:15',
+            'mobile' => 'required|max:10|min:10',
             'email' => 'email:rfc,dns',
 
         ]);
 
         Users::create([
-            'name' => $request->name,
+            'firstName' => $request->firstName,
+            'lastName' => $request->lastName,
+            'mobile' => $request->mobile,
             'email' => $request->email,
             'created_at' => now()
         ]);
@@ -39,13 +43,17 @@ class UsersController extends Controller
     public function update(Request $request, Users $user){
 
         $request->validate([
-            'name' => 'required|max:15',
+            'firstName' => 'required|max:15',
+            'lastName' => 'required|max:15',
+            'mobile' => 'required|max:10|min:10',
             'email' => 'email:rfc,dns',
 
         ]);
 
         $user->update([
-            'name' => $request->name,
+            'firstName' => $request->firstName,
+            'lastName' => $request->lastName,
+            'mobile' => $request->mobile,
             'email' => $request->email,
             'updated_at' => now()
         ]);
