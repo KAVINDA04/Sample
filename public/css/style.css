@@ -1,0 +1,140 @@
+.heading{
+    height: 80px;
+}
+
+.label{
+    color: #0C141C;
+}
+
+.focus{
+    outline: none;
+}
+
+.effect{
+    border: 0;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+}
+
+.button{
+    padding: 0;
+    border: none;
+    background: none;
+    margin-right: 10px;
+}
+
+.card-image{
+    height: 40px;
+    width: 40px;
+}
+
+.vertical{
+    border-left: 6px solid #39DA8A;
+    height: auto;
+}
+
+.msg{
+    border: 0;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+    margin-left: 20px;
+    margin-top: 430px;
+}
+
+.alertMessage{
+    margin-left: 10px;
+}
+
+.userLogout{
+    height: 37px;
+}
+
+.card-header{
+    font-family: 'Nunito', sans-serif;
+    margin-top: 5px;
+}
+
+.chatName{
+    height: 26px;
+}
+
+.chat-input{
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 2px;
+    padding: 1px 1px;
+    position: relative;
+}
+
+.chat-col{
+    height: 430px;
+    max-height: 430px;
+    width: 100%;
+}
+
+.chat-submit{
+    border: none;
+    width: 93%;
+    padding: 8px 10px;
+}
+
+.chat{
+    padding: 20px;
+    height: 450px;
+    max-height: 450px;
+    width: 100%;
+}
+
+.user-role{
+    list-style: none;
+}
+
+.user-submit{
+    border: none;
+    background: #64B5F6;
+    font-family: 'Nunito', sans-serif;
+    padding: 6px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.user-submit:hover{
+    background: #39DA8A;
+}
+
+.my-chat{
+    padding: 8px;
+    background: #81D4FA;
+    border-radius: 5px;
+    list-style: none;
+    margin-bottom: 10px;
+    margin-left: 7px;
+    margin-right: 7px;
+    width: 60%;
+}
+
+.user-chat{
+    padding: 8px;
+    background: #ffc107;
+    border-radius: 5px;
+    list-style: none;
+    margin-bottom: 10px;
+    margin-left: 7px;
+    margin-right: 7px;
+    width: 60%;
+    float: right;
+}
+
+.input-name{
+    width: 76%;
+}
+
+.card-header{
+    margin: 0;
+}
+
+.connected{
+    font-size: 12px;
+}
+
+

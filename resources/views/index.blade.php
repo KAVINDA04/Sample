@@ -9,14 +9,21 @@
             </div>
 
             @if ($message = Session::get('success'))
-                <div class="alert alert-warning">
+                <div style="margin-left: 10px; margin-right: 10px" class="alert alert-success">
                     <p>{{$message}}</p>
                 </div>
             @endif
 
             <div class="row">
-                <div class="justify-content-left mb-4 mt-2">
-                    <a class="btn btn-success" href="{{route('user.create')}}">New User</a>
+                <div class="d-flex">
+                    <div class="justify-content-left mb-4 mt-2">
+                        <a class="btn btn-success" href="{{route('user.create')}}">New User</a>
+                    </div>
+                    <div class="mt-2 mb-4 ml-4 d-flex">
+                        <p class="btn btn-outline-dark userView mr-2">{{ $LoggedUserInfo['firstName'] }}</p>
+                        <a class="btn btn-outline-primary userLogout ml-2" href="{{route('user.logout')}}">Logout</a>
+                        <a class="btn btn-outline-dark userLogout ml-3" href="{{route('user.chat')}}">Open Chat</a>
+                    </div>
                 </div>
             </div>
             <table class="table table-striped">
@@ -51,4 +58,8 @@
             </table>
         </div>
     </div>
+
+    <script>
+
+    </script>
 @endsection

@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'UsersController@index');
+Route::get('/', 'UsersController@login');
+
+Route::get('/index', 'UsersController@index');
 
 Route::get('/users', 'UsersController@create')->name('user.create');
 
@@ -25,4 +27,12 @@ Route::post('/users/{user}', 'UsersController@update')->name('user.update');
 
 Route::delete('/users/{user}', 'UsersController@destroy')->name('user.destroy');
 
-Route::post('/', 'UsersController@index')->name('user.index');
+Route::post('/index', 'UsersController@index')->name('user.index');
+
+Route::get('/chat', 'UsersController@chat')->name('user.chat');
+
+Route::get('/login', 'UsersController@login')->name('user.login');
+
+Route::get('/logout', 'UsersController@logout')->name('user.logout');
+
+Route::post('/check', 'UsersController@check')->name('user.check');

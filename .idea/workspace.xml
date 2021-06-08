@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2e5b263-1ead-448f-9cf2-5088a1ec990a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Sample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sample.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Users.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_29_062114_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_29_062114_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -143,6 +147,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sample-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RunDashboard">
@@ -176,7 +181,18 @@
       <workItem from="1622264735360" duration="104000" />
       <workItem from="1622265205653" duration="20954000" />
       <workItem from="1622443256236" duration="1289000" />
-      <workItem from="1622445059986" duration="15003000" />
+      <workItem from="1622445059986" duration="15636000" />
+      <workItem from="1622524054465" duration="3157000" />
+      <workItem from="1622535427914" duration="12136000" />
+      <workItem from="1622602304715" duration="19006000" />
+      <workItem from="1622689260430" duration="4643000" />
+      <workItem from="1622694377404" duration="19453000" />
+      <workItem from="1622719073342" duration="3690000" />
+      <workItem from="1622777758000" duration="28289000" />
+      <workItem from="1622973340031" duration="5940000" />
+      <workItem from="1622987658929" duration="6405000" />
+      <workItem from="1623034121178" duration="29247000" />
+      <workItem from="1623122838492" duration="17341000" />
     </task>
     <servers />
   </component>

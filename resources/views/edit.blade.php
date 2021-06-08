@@ -31,7 +31,7 @@
                             <input id="email" type="text" name="email" value="{{$user->email}}" class="form-control effect" placeholder="name@example.com">
                             <p style="color: red">@error('email') {{$message}} @enderror</p>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Update</button>
                     </div>
                 </form>
             </div>
