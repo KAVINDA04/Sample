@@ -8,7 +8,7 @@
                 <div class="card-header d-flex justify-content-between align-items-center pb-4">
                     <strong class="card-title text-center mx-auto">REGISTER</strong>
                 </div>
-                <form action="{{route('user.store')}}" method="POST">
+                <form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="col-sm-12">
                         <div class="left">
@@ -35,6 +35,10 @@
                             <label for="password" class="label">Password</label>
                             <input id="password" type="password" name="password" class="form-control effect">
                             <p style="color: red">@error('password') {{$message}} @enderror</p>
+                        </div>
+                        <div class="left">
+                            <input id="image" type="file" name="image" class="form-control effect">
+                            <p style="color: red">@error('image') {{$message}} @enderror</p>
                         </div>
                         <a href="{{route('user.login')}}">I already have an account, Sign in</a>
                         <button type="submit" class="btn btn-primary btn-block mb-4 mt-4">Register</button>

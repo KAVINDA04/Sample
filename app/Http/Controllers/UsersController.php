@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -31,14 +32,34 @@ class UsersController extends Controller
 
         ]);
 
-        Users::create([
+        /*Users::create([
             'firstName' => $request->firstName,
             'lastName' => $request->lastName,
             'mobile' => $request->mobile,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'created_at' => now()
-        ]);
+        ]);*/
+
+        $users = new Users();
+
+        $users->firstName = $request->get('firstName');
+        $users->lastName = $request->get('lastName');
+        $users->mobile = $request->get('mobile');
+        $users->email = $request->get('email');
+        $users->password = Hash::make($request->get('password'));
+
+        if ($request->has('image')){
+            $image = $request->file('image');
+            $imageName = 'File'.'-'.time().'.'.$image->getClientOriginalExtension();
+            $destination = public_path('/images');
+            $image->move($destination, $imageName);
+
+            $users->imageName = $imageName;
+        }
+
+        $users->save();
+
         return redirect()-> route('user.login')->with('success', 'User has been Registered');
     }
 
