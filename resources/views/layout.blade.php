@@ -22,7 +22,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
     <script>
-        var io = io("http://localhost:3000");
+
+        var io = io("http://localhost:3000", {'multiplex': false});
 
         let receiver = "";
         let sender = "";
@@ -32,12 +33,55 @@
         let MM = date.getMinutes();
         let SS = date.getSeconds();
 
-        function enterName() {
+        window.onload = function() {
+
+            fetch("http://localhost:3000/users")
+                .then(response => response.json())
+                .then(result => {
+                    if (result) {
+                        let html = "";
+
+                        result.forEach(user => {
+                            html += "<li class='user-role'><button class='shadow btn-block user-submit' onclick='onUserSelected(this.innerHTML);'>" + user.name + "</li></button>";
+
+                            document.getElementById("users").innerHTML = html;
+                        });
+                    }
+                })
+                .catch(err => {
+                   console.log(err);
+                });
+
             var name = document.getElementById("name").value;
+
 
             io.emit("user_connected", name);
             sender = name;
+            io.connect();
+            var chat = document.getElementById("chat");
+            if (chat.style.display === "none") {
+                chat.style.display = "block";
+            } else {
+                chat.style.display = "none";
+            }
+        };
 
+        io.on("user_connected", function (username) {
+            let html = "";
+
+            html += "<li class='user-role'><button class='shadow btn-block user-submit' onclick='onUserSelected(this.innerHTML);'>" + username + "</li></button>";
+
+            document.getElementById("users").innerHTML += html;
+        });
+
+        /*function enterName() {
+            var name = document.getElementById("name").value;
+
+            console.log(name);
+
+            io.emit("user_connected", name);
+            sender = name;
+            io.connect();
             var chat = document.getElementById("chat");
             if (chat.style.display === "none") {
                 chat.style.display = "block";
@@ -46,14 +90,7 @@
             }
 
             event.preventDefault();
-        }
-
-        io.on("user_connected", function (username) {
-            let html = "";
-            html += "<li class='user-role'><button class='shadow btn-block user-submit' onclick='onUserSelected(this.innerHTML);'>" + username + "</li></button>";
-
-            document.getElementById("users").innerHTML += html;
-        });
+        }*/
 
         function onUserSelected(username) {
             const currentUser = document.getElementById("connectedUser").innerHTML;
@@ -75,15 +112,18 @@
 
                     messages.forEach(function(m) {
                         if (currentUser === m.sender)
-                            return html += "<li class='my-chat'>" + " You said: " + m.message + "<div class='float-right'>" + m.created_at + "</div>" + "</li><br>";
+                            return html += "<li id='my-chat' class='my-chat'>" + " You said: " + m.message + "<div class='float-right'>" + m.created_at + "</div>" + "</li><br>";
                         else
                             return html += "<li class='user-chat'>" + m.sender + " says: " + m.message + "<div class='float-right'>" + m.created_at + "</div>" + "</li><br>";
                     });
-                    document.getElementById("messages").innerHTML += html;
+                    document.getElementById("messages").innerHTML = html;
+                    $(document).ready(function () {
+                        $('#chat-area').animate({scrollTop: 1000000}, 10);
+                    });
                 }
             });
-
         }
+
 
         function sendMessage() {
             let message = document.getElementById("message").value;
@@ -99,6 +139,9 @@
             document.getElementById("messages").innerHTML += html;
 
             document.getElementById("message").value = '';
+            $(document).ready(function () {
+                $('#chat-area').animate({scrollTop: 1000000}, 10);
+            });
             return false;
         }
 
@@ -108,6 +151,9 @@
             html += "<li class='user-chat'>" + data.sender + " says: " + data.message + "<div class='float-right'>" + HH + ':' + MM + ':' + SS + "</div>" + "</li><br><br>";
 
             document.getElementById("messages").innerHTML += html;
+            $(document).ready(function () {
+                $('#chat-area').animate({scrollTop: 1000000}, 10);
+            });
         });
 
     </script>

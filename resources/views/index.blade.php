@@ -16,13 +16,18 @@
 
             <div class="row">
                 <div class="d-flex">
-                    <div class="justify-content-left mb-4 mt-2">
+                    {{--<div class="justify-content-left mb-4 mt-2">
                         <a class="btn btn-success" href="{{route('user.create')}}">New User</a>
-                    </div>
+                    </div>--}}
                     <div class="mt-2 mb-4 ml-4 d-flex">
-                        <p class="btn btn-outline-dark userView mr-2">{{ $LoggedUserInfo['firstName'] }}</p>
-                        <a class="btn btn-outline-primary userLogout ml-2" href="{{route('user.logout')}}">Logout</a>
-                        <a class="btn btn-outline-dark userLogout ml-3" href="{{route('user.chat')}}">Open Chat</a>
+                        <p class="btn btn-outline-dark userView mr-2">{{ $LoggedUserInfo['firstName'] }} {{ $LoggedUserInfo['firstName'] }}</p>
+
+                        {{--<input class="input-name" id="name" value="{{ $LoggedUserInfo['firstName'] }} {{ $LoggedUserInfo['lastName'] }}" readonly>--}}
+                        {{--<form onclick="enterName()">
+                            <a class="btn btn-outline-dark userLogout ml-3" href="{{route('user.chat')}}"> Chat</a>
+                        </form>--}}
+                        <a class="btn btn-outline-primary userLogout ml-2" type="submit" href="{{route('user.logout')}}">Logout</a>
+                        <a class="btn btn-outline-dark userLogout ml-3" href="{{route('user.chat')}}" onsubmit="enterName()">Open Chat</a>
                     </div>
                 </div>
             </div>
@@ -45,11 +50,11 @@
                     <td>{{$user->email}}</td>
                     <td>
                         <div class="d-flex">
-                            <button class="button"><a href="{{route('user.edit', $user->id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>
+                            <button class="button ml-3"><a href="{{route('user.edit', $user->id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>
                             <form method="post" action="{{route('user.destroy', $user->id)}}">
                                 {{csrf_field()}}
                                 {{method_field('DELETE')}}
-                                <button class="button"><a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></button>
+                                {{--<button class="button"><a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></button>--}}
                             </form>
                         </div>
                     </td>

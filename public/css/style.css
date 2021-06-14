@@ -29,11 +29,6 @@
     border-radius: 50%;
 }
 
-.vertical{
-    border-left: 6px solid #39DA8A;
-    height: auto;
-}
-
 .msg{
     border: 0;
     border-bottom: 1px solid black;
@@ -105,7 +100,6 @@
 
 .chat-area::-webkit-scrollbar{
     width: 0;
-    height: 0;
 }
 
 .user-role{
@@ -113,16 +107,21 @@
 }
 
 .user-submit{
-    border: none;
-    background: #64B5F6;
+    /*border: none;*/
+    background: none;
+    border: 2px solid #64B5F6;
     font-family: 'Nunito', sans-serif;
     padding: 6px;
-    margin-top: 10px;
+    margin-top: 20px;
     border-radius: 5px;
 }
 
 .user-submit:hover{
-    background: #39DA8A;
+    background: #64B5F6;
+}
+
+.user-submit:focus{
+    background: #64B5F6;
 }
 
 .user-chat{
@@ -186,4 +185,12 @@
     border-radius: 3px;
 }
 
+.user-list{
+    overflow: auto;
+    max-height: 410px;
 
+}
+
+.user-list::-webkit-scrollbar{
+    width: 0;
+}

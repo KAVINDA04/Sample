@@ -37,7 +37,7 @@
                             <p style="color: red">@error('password') {{$message}} @enderror</p>
                         </div>
                         <div class="left">
-                            <input id="image" type="file" name="image" class="form-control effect">
+                            <input id="image" type="file" name="image" placeholder="Image" class="form-control effect">
                             <p style="color: red">@error('image') {{$message}} @enderror</p>
                         </div>
                         <a href="{{route('user.login')}}">I already have an account, Sign in</a>

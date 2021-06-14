@@ -9,7 +9,7 @@
                     <div class="card mt-4">
                         <div class="card-header d-flex justify-content-between">
                             <div class="header-content d-flex">
-                                <img class="card-image ml-2" src="{{ asset('images/File-1623321668.png') }}" alt="">
+                                <img class="card-image ml-2" src="{{ asset('images/'.$LoggedUserInfo->imageName) }}" alt="">
                                 <div class="user-content">
                                     <span class="mt-1" id="connectedUser">{{ $LoggedUserInfo['firstName'] }} {{ $LoggedUserInfo['lastName'] }}</span>
                                     <p>online</p>
@@ -19,12 +19,12 @@
                         </div>
                         <div class="chat">
                             <div id="chat">
-                                <form onsubmit="return enterName();">
-                                    <input class="input-name" id="name" value="{{ $LoggedUserInfo['firstName'] }} {{ $LoggedUserInfo['lastName'] }}" readonly>
-                                    <button class="btn-outline-dark btn-join" type="submit">JOIN</button>
-                                </form>
+                                <input class="input-name" id="name" value="{{ $LoggedUserInfo['firstName'] }} {{ $LoggedUserInfo['lastName'] }}" readonly>
+                                {{--<button class="btn-outline-dark btn-join" type="submit">JOIN</button>--}}
                             </div>
-                            <ul class="list-group" id="users"></ul>
+                            <div class="user-list">
+                                <ul class="list-group" id="users"></ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -50,8 +50,8 @@
                         </div>
                         <section>
                             <div class="chat">
-                                <div class="chat-area overflow-auto">
-                                    <div class="row d-flex">
+                                <div id="chat-area" class="chat-area overflow-auto">
+                                    <div id="row" class="row d-flex">
                                         <ul id="messages"></ul>
                                     </div>
                                 </div>
